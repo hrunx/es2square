@@ -1,0 +1,38 @@
+﻿# Node
+node_modules
+.npm
+.npmrc
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist
+*.log
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Editors
+.vscode
+.idea
+.DS_Store
+
+# Vite
+.vite
+.cache
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage
+
+# Supabase
+.supabase
+

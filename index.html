@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    
+    <!-- SEO Meta Tags -->
+    <title>ES2 - Energy Service Solutions | Professional Energy Audits</title>
+    <meta name="description" content="ES2 provides comprehensive energy audits and solutions for residential, commercial, and industrial properties. Save money and reduce your carbon footprint with our expert energy services." />
+    <meta name="keywords" content="energy audit, energy efficiency, building energy management, energy consulting, energy savings, sustainability, green building, carbon footprint reduction" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ES2 - Energy Service Solutions" />
+    <meta property="og:description" content="Professional energy audits and solutions for all property types. Reduce costs and improve sustainability." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://es2.energy" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ES2 - Energy Service Solutions" />
+    <meta name="twitter:description" content="Professional energy audits and solutions for all property types. Reduce costs and improve sustainability." />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://es2.energy" />
+
+    <!-- Translation System -->
+    <script>
+      // Basic translations
+      const translations = {
+        ar: {
+          "Services": "الخدمات",
+          "About": "حول",
+          "Process": "العملية",
+          "Contact": "اتصل بنا",
+          "Get Started": "ابدأ الآن",
+          "Transform Your Building's Energy Efficiency": "حول كفاءة الطاقة في مبناك",
+          "Start Energy Audit": "ابدأ تدقيق الطاقة",
+          "Learn More": "اعرف المزيد",
+          "Comprehensive Energy Solutions": "حلول الطاقة الشاملة",
+          "AI-Powered Analysis": "تحليل مدعوم بالذكاء الاصطناعي",
+          "Smart Scanning": "المسح الذكي",
+          "Building Assessment": "تقييم المبنى",
+          "Smart Recommendations": "توصيات ذكية",
+          "Performance Tracking": "تتبع الأداء",
+          "Detailed Reports": "تقارير مفصلة",
+          "Ready to optimize your energy consumption?": "هل أنت مستعد لتحسين استهلاك الطاقة؟",
+          "Get Started Now": "ابدأ الآن"
+        },
+        de: {
+          "Services": "Dienstleistungen",
+          "About": "Über uns",
+          "Process": "Prozess",
+          "Contact": "Kontakt",
+          "Get Started": "Loslegen",
+          "Transform Your Building's Energy Efficiency": "Verbessern Sie die Energieeffizienz Ihres Gebäudes",
+          "Start Energy Audit": "Energieaudit starten",
+          "Learn More": "Mehr erfahren",
+          "Comprehensive Energy Solutions": "Umfassende Energielösungen",
+          "AI-Powered Analysis": "KI-gestützte Analyse",
+          "Smart Scanning": "Intelligentes Scannen",
+          "Building Assessment": "Gebäudebewertung",
+          "Smart Recommendations": "Intelligente Empfehlungen",
+          "Performance Tracking": "Leistungsverfolgung",
+          "Detailed Reports": "Detaillierte Berichte",
+          "Ready to optimize your energy consumption?": "Bereit Ihren Energieverbrauch zu optimieren?",
+          "Get Started Now": "Jetzt beginnen"
+        },
+        zh: {
+          "Services": "服务",
+          "About": "关于",
+          "Process": "流程",
+          "Contact": "联系",
+          "Get Started": "开始使用",
+          "Transform Your Building's Energy Efficiency": "提升建筑能源效率",
+          "Start Energy Audit": "开始能源审计",
+          "Learn More": "了解更多",
+          "Comprehensive Energy Solutions": "综合能源解决方案",
+          "AI-Powered Analysis": "人工智能分析",
+          "Smart Scanning": "智能扫描",
+          "Building Assessment": "建筑评估",
+          "Smart Recommendations": "智能建议",
+          "Performance Tracking": "性能跟踪",
+          "Detailed Reports": "详细报告",
+          "Ready to optimize your energy consumption?": "准备好优化您的能源消耗了吗？",
+          "Get Started Now": "立即开始"
+        }
+      };
+
+      window.DeepSeekTranslate = {
+        currentLang: 'en',
+        convert: function(text) {
+          if (this.currentLang === 'en') return text;
+          return translations[this.currentLang]?.[text] || text;
+        },
+        setLanguage: function(lang) {
+          this.currentLang = lang;
+          document.documentElement.lang = lang;
+          document.dispatchEvent(new CustomEvent('languageChange', { detail: lang }));
+          // Force re-render of all translatable elements
+          document.querySelectorAll('[data-i18n]').forEach(el => {
+            el.textContent = this.convert(el.getAttribute('data-i18n') || '');
+          });
+        },
+        init: function(config) {
+          console.log('Translation system initialized with config:', config);
+          if (config.autoDetect) {
+            const browserLang = navigator.language.split('-')[0];
+            if (config.supportedLanguages.includes(browserLang)) {
+              this.setLanguage(browserLang);
+            }
+          }
+        }
+      };
+    </script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        console.log('[DeepSeek] DOM ready. Init start…');
+        if (window.DeepSeekTranslate && typeof window.DeepSeekTranslate.init === 'function') {
+          window.DeepSeekTranslate.init({
+            autoDetect: true,
+            fallback: 'en',
+            supportedLanguages: ['en', 'ar', 'de', 'zh']
+          });
+          console.log('[DeepSeek] Initialized ✅');
+        } else {
+          console.warn('[DeepSeek] Translation object missing ❌');
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
